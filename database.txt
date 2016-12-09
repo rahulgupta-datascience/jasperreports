@@ -1,0 +1,36 @@
+Download and install postgreSQL
+
+Now create a database postgres
+
+put username and password i have 
+
+username as postgres 
+password as root
+
+Now create table
+
+CREATE TABLE vehiclesdata
+(
+    state CHAR(50),
+    year INT
+)
+
+Load the data in to the table 
+
+insert data from file vehiclesdata.csv
+
+Run below query to do this.
+
+COPY vehiclesdata 
+FROM 'C:\tmp\persons.csv' DELIMITER ',' CSV HEADER;
+
+
+note:	copy vechiclesdata is name of your database
+	location of file 'C:\tmp\vehiclesdata.csv'
+
+If the file vehiclesdata.csv create any problem you can 
+download the data from: https://data.gov.in/catalog/state-wise-total-registered-motor-vehicles-india
+and just edit column one as state and 2011 as year. Keep the remain column if you want.
+
+
+

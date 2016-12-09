@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-12-09T11:48:19 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vehicle" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b5e32e97-88d9-4492-9f74-046026dc6f59">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[select State,year  from vehiclesdata]]>
+	</queryString>
+	<field name="State" class="java.lang.String"/>
+	<field name="year" class="java.lang.Long"/>
+	<variable name="State" class="java.lang.String" resetType="None" calculation="Count">
+		<variableExpression><![CDATA[$F{State}]]></variableExpression>
+	</variable>
+	<variable name="year" class="java.lang.Integer" resetType="None" calculation="Sum">
+		<variableExpression><![CDATA[$F{year}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="802" splitType="Stretch">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="-20" y="-20" width="595" height="740" uuid="f47e44df-bf10-4c29-bf99-db6cacfc43f6"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{State}]]></keyExpression>
+					<valueExpression><![CDATA[$F{year}]]></valueExpression>
+					<labelExpression><![CDATA[$F{State} + "("+ $F{year} + ")" .toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel>
+						<font size="8"/>
+					</itemLabel>
+				</piePlot>
+			</pieChart>
+			<staticText>
+				<reportElement x="0" y="30" width="560" height="50" uuid="35a7ec38-928a-4128-be5d-f552b1c03f7c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Total Registered Motor Vehicles In India till 2011]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="760" width="440" height="40" uuid="07c29381-dbae-45a0-9145-696bd58b97eb">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement rotation="None">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[http://opensourceedge.blogspot.com/]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
